@@ -41,7 +41,7 @@
 </head>
 <body>
     <div>
-    <h1><a href="main.php" style="color: lightpink; text-decoration-line:none;">.._-+* MAIN PAGE *+-_..</a></h1>
+    <h1><a href="main.php" style="color: lightpink; text-decoration-line:none;">｡._-+* MAIN PAGE *+-_.｡</a></h1>
     <?php
         if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])) {
             echo "<p><button class=\"button\" onclick=\"window.location.href='login.php'\">LOGIN</button> <small style=\"color:lightpink;\">OR</small> <button class=\"button\" onclick=\"window.location.href='join.php'\">JOIN</button></p>";

@@ -1,0 +1,45 @@
+
+            span {
+                padding: 7px;
+                border-radius: 8px;
+                border-color: pink;
+                border-style: solid;
+                border-width:3px;
+            }
+            div {
+                text-align: center;
+                margin: 0;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -40%) scale(1.5, 1.5)
+            }
+            h1 {
+                line-height: 40px;
+            }
+            .button {
+                margin: 13px;
+                padding: 12px;
+                width: 174px;
+                border: none;
+                border-radius: 8px;
+                background-color: pink;
+                color: white;
+                font-weight: 565;
+                margin: none;
+            }
+            .button:active {
+                background-color: lightpink;
+                color: whitesmoke;
+                font-weight: 570;
+            }
+            .box {
+                border-color: whitesmoke;
+                border-radius: 7px;
+                border-width: 3px;
+                vertical-align: bottom;
+            }
+            a {
+                color: palevioletred;
+                text-decoration-style: dashed;
+            }

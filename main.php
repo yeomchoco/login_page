@@ -48,7 +48,7 @@
         } else {
             $user_id = $_SESSION['user_id'];
             $user_name = $_SESSION['user_name'];
-            echo "<p>🌸 $user_name(ID : $user_id)님 환영합니다 🌸</p>";
+            echo "<p>🌸 $user_name(ID : $user_id)님 어서오세요 🌸</p>";
             echo "<p><button class=\"button\" style=\"width: 72px;\" onclick=\"window.location.href='logout.php'\">로그아웃</button></p>";
         }
     ?>

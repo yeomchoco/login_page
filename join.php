@@ -4,15 +4,45 @@
     <head>
         <meta charset="UTF-8">
         <title>Join</title>
+        <script>
+            function checkid(){
+	        var userid = document.getElementById("uid").value;
+	        if(userid)  //userid로 받음
+	        {
+	        	url = "check.php?userid="+userid;
+	        		window.open(url,"chkid","width=400,height=200");
+	        	}else{
+	        		alert("아이디를 입력하세요.");
+	        	}
+	        }
+            function change(){
+                document.getElementById("decide").innerHTML = "ID가 중복되는 지 확인해주세요"
+                document.getElementById("uid").disabled = false
+                document.getElementById("uid").value = ""
+                document.getElementById("join_button").disabled = true
+                document.getElementById("check_button").setAttribute("onclick", "checkid()")
+            }
+            function decide(){
+                document.getElementById("decide").innerHTML = "사용 가능한 아이디입니다."
+                document.getElementById("decide_id").value = document.getElementById("uid").value
+                document.getElementById("uid").disabled = true
+                document.getElementById("join_button").disabled = false
+                document.getElementById("check_button").value = "다른 ID로 변경"
+                document.getElementById("check_button").setAttribute("onclick", "change()")
+            }
+        </script>
     </head>
     <body>
         <h2>회원가입</h2>
         <?php if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])) { ?>
         <form method="post" action="join_ok.php" autocomplete="off">
             <p>이름: <input type="text" name="join_name" required></p>
-            <p>아이디: <input type="text" name="join_id" required></p>
+            <p>아이디: <input type="text" name="join_id" id="uid" required></p>
+            <input type="hidden" name="decide_id" id="decide_id">
+            <p><span id="decide">ID가 중복되는 지 확인해주세요</span> <input type="button" id="check_button" value="ID중복검사" onclick="checkid();"></p>
             <p>비밀번호: <input type="password" name="join_pw" required></p>
-            <p><input type="submit" value="가입하기"></p>
+            <p>비밀번호 확인: <input type="password" name="join_pw2" required></p>
+            <p><input type="submit" id="join_button" value="가입하기" disabled=true></p>
         </form>
         <small><a href="login.php">이미 회원이신가요?</a><small>
         <?php } else {
